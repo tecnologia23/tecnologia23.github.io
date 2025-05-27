@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Panel Contable - Jardín Infantil</title>
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="login-screen">
-    <h2>Ingreso al Sistema</h2>
-    <input type="text" id="user" placeholder="Usuario" />
-    <input type="password" id="password" placeholder="Contraseña" />
-    <button onclick="login()">Ingresar</button>
-  </div>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendValue('(')">(</button>
+            <button onclick="appendValue(')')">)</button>
+            <button onclick="deleteLast()">←</button>
 
-  <div id="main-panel" style="display: none;">
-    <h1>Panel de Control</h1>
+            <button onclick="appendFunction('sin')">sin</button>
+            <button onclick="appendFunction('cos')">cos</button>
+            <button onclick="appendFunction('tan')">tan</button>
+            <button onclick="appendValue('/')">÷</button>
 
-    <!-- Formularios -->
-    <section id="formularios">
-      <button onclick="mostrarFormulario('alumno')">Registro de Alumnos</button>
-      <button onclick="mostrarFormulario('profesora')">Registro de Profesoras</button>
-      <button onclick="mostrarFormulario('servicios')">Servicios</button>
-      <button onclick="mostrarFormulario('pagos')">Pagos</button>
-    </section>
+            <button onclick="appendFunction('log')">log</button>
+            <button onclick="appendFunction('sqrt')">√</button>
+            <button onclick="appendValue('^')">^</button>
+            <button onclick="appendValue('*')">×</button>
 
-    <div id="formularios-container"></div>
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('-')">−</button>
 
-    <!-- Exportar -->
-    <section id="exportar">
-      <button onclick="exportarExcel()">Exportar a Excel</button>
-      <button onclick="exportarPDF()">Exportar a PDF</button>
-    </section>
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('+')">+</button>
 
-    <!-- Gráficos -->
-    <section id="grafico">
-      <canvas id="graficoBalance" width="400" height="200"></canvas>
-    </section>
-  </div>
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="calculate()">=</button>
 
-  <script src="libs/chart.min.js"></script>
-  <script src="libs/jspdf.min.js"></script>
-  <script src="js/login.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/chart.js"></script>
+            <button onclick="appendValue('0')" class="zero">0</button>
+            <button onclick="appendValue('.')">.</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
