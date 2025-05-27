@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel Contable - Jardín Infantil</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="login-screen">
+    <h2>Ingreso al Sistema</h2>
+    <input type="text" id="user" placeholder="Usuario" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button onclick="login()">Ingresar</button>
+  </div>
+
+  <div id="main-panel" style="display: none;">
+    <h1>Panel de Control</h1>
+
+    <!-- Formularios -->
+    <section id="formularios">
+      <button onclick="mostrarFormulario('alumno')">Registro de Alumnos</button>
+      <button onclick="mostrarFormulario('profesora')">Registro de Profesoras</button>
+      <button onclick="mostrarFormulario('servicios')">Servicios</button>
+      <button onclick="mostrarFormulario('pagos')">Pagos</button>
+    </section>
+
+    <div id="formularios-container"></div>
+
+    <!-- Exportar -->
+    <section id="exportar">
+      <button onclick="exportarExcel()">Exportar a Excel</button>
+      <button onclick="exportarPDF()">Exportar a PDF</button>
+    </section>
+
+    <!-- Gráficos -->
+    <section id="grafico">
+      <canvas id="graficoBalance" width="400" height="200"></canvas>
+    </section>
+  </div>
+
+  <script src="libs/chart.min.js"></script>
+  <script src="libs/jspdf.min.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chart.js"></script>
+</body>
+</html>
